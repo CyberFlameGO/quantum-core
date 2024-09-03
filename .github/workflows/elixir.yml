@@ -224,7 +224,7 @@ jobs:
             compile_dev-${{ secrets.CACHE_VERSION }}-${{matrix.otp}}-${{matrix.elixir}}-
       - run: mix deps.compile --skip-umbrella-children
       - run: mix compile --warning-as-errors
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: dialyzer_plt_dev-${{matrix.otp}}-${{matrix.elixir}}
           path: priv/plts/
